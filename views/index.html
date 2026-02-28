@@ -76,9 +76,9 @@
         <div class="container">
             <div class="home">
                 <div class="box">
-                    <div class="divider" style="width: 50px;"></div>
+                    <div class="divider top"></div>
                     <br>
-                    <div class="divider" style="width:140px;"></div>
+                    <div class="divider primary"></div>
                     <br>
                     <h1 class="size-3" style="margin: 0;">
                         Minaya Constructora
@@ -369,18 +369,22 @@
     <footer class="footer">
         <div class="row">
             <div class="box">
-                <p>
-                    Ubicacion:
-                    Calle 1ra #14, Suite 3A, Las Palmas de Herrera, Santo Domingo Oeste
+                <p class="p-2">
+                    <i class="fa-solid fa-map-location-dot" style="margin-right: 0.8rem;"></i>
+                    <a href="https://www.google.com/maps?q=Calle+1ra+%2314,+Suite+3A,+Las+Palmas+de+Herrera,+Santo+Domingo+Oeste"
+                        target="_blank">
+                        Calle 1ra #14, Suite 3A, Las Palmas de Herrera, Santo Domingo Oeste
+                    </a>
                 </p>
 
-                <p> Tel: 809 000 0000</p>
 
-                <p>
-                    Cel: 829 000 0000
+                <p class="p-2">Tel: 809 000 0000</p>
+
+                <p class="p-2">
+                    Cel: <a href="https://wa.me/18493570878" target="_blank">829 000 0000</a>
                 </p>
 
-                <a href="">Correo: contacto@minayaconstruction.com</a>
+                <a href="mailto:contacto@minayaconstruction.com" class="p-1">contacto@minayaconstruction.com</a>
             </div>
             <div class="box">
                 <img src="/logos/MCLOGO.png" alt="">
@@ -451,6 +455,12 @@
             // Default parameters
             slidesPerView: 1,
             spaceBetween: 10,
+            dynamicBullets: true,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+            },
             // Responsive breakpoints
             breakpoints: {
                 // when window width is >= 320px

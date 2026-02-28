@@ -144,6 +144,7 @@ nav {
 
 nav>.menu {
     display: none;
+    cursor: pointer;
 }
 
 nav>ul {
@@ -349,12 +350,34 @@ textarea {
 
 #menu-close {
     display: none;
+    cursor: pointer;
 }
+
+.divider{
+   height: 10px;
+}
+.divider.top{
+    width: 50px;
+}
+.divider.primary {
+    width: 140px;
+}
+
 
 /* Móviles pequeños (hasta 480px) */
 @media (max-width: 480px) {
 
     /* estilos para móviles pequeños */
+
+    .divider {
+        height: 8px;
+    }
+    .divider.top{
+        width: 30px;
+    }
+    .divider.primary {
+        width: 90px;
+    }
 
     
      html {
@@ -362,7 +385,7 @@ textarea {
     }
 
     .size-1{
-        font-size: 1rem;
+        font-size: 1.6rem;
     }
 
     .size-2{
@@ -527,13 +550,23 @@ textarea {
 
     /* estilos para móviles medianos */
 
+    .divider {
+        height: 8px;
+    }
+    .divider.top{
+        width: 30px;
+    }
+    .divider.primary {
+        width: 90px;
+    }
+
     
       html {
         font-size: 14px;
     }
 
-    .size-1{
-        font-size: 1rem;
+      .size-1{
+        font-size: 1.6rem;
     }
 
     .size-2{
@@ -706,6 +739,18 @@ textarea {
         font-size: 14px;
     }
 
+    
+    .divider {
+        height: 8px;
+    }
+    .divider.top{
+        width: 30px;
+    }
+    .divider.primary {
+        width: 90px;
+    }
+
+
     nav>.menu {
         display: block;
         font-size: 2.5rem;
@@ -762,8 +807,8 @@ textarea {
 
  
 
-        .size-1{
-        font-size: 1rem;
+      .size-1{
+        font-size: 1.6rem;
     }
 
     .size-2{
