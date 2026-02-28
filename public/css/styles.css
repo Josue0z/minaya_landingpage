@@ -391,6 +391,7 @@ textarea {
 
     .navigation>li {
         margin: 3rem 0;
+           font-size: 1.4rem;
     }
 
     #menu-close {
@@ -564,6 +565,7 @@ textarea {
 
     .navigation>li {
         margin: 3rem 0;
+           font-size: 1.4rem;
     }
 
     #menu-close {
@@ -723,11 +725,13 @@ textarea {
         padding: 0;
         transition: all ease 0.4s;
         z-index: 21000;
+     
 
     }
 
     .navigation>li {
         margin: 3rem 0;
+        font-size: 1.4rem;
     }
 
     #menu-close {

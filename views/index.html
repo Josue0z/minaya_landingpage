@@ -4,48 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minaya</title>
+    <meta name="description" content="En Minaya Constructora creemos que cada proyecto es una oportunidad para
+                    transformar espacios y construir futuro. Somos una empresa dedicada al diseño, planificación y
+                    ejecución de obras civiles y arquitectónicas, comprometida con la calidad, la innovación y la
+                    sostenibilidad">
+    <meta name="keywords" content="negocio, servicios, portafolio, contacto">
+    <meta name="author" content="MINAYACONSTRUCTION">
+
+    <meta name="robots" content="index, follow"> <!-- Controla indexación -->
+    <meta name="googlebot" content="index, follow"> <!-- Específico para Google -->
+
+    <meta property="og:title" content="Minaya Construction">
+    <meta property="og:description" content="En Minaya Constructora creemos que cada proyecto es una oportunidad para
+                    transformar espacios y construir futuro. Somos una empresa dedicada al diseño, planificación y
+                    ejecución de obras civiles y arquitectónicas, comprometida con la calidad, la innovación y la
+                    sostenibilidad">
+    <meta property="og:image" content="https://sea-lion-app-pgnnr.ondigitalocean.app/logos/mclogo.ico">
+    <meta property="og:url" content="https://sea-lion-app-pgnnr.ondigitalocean.app">
+    <meta property="og:type" content="website">
+
+
+
+    <title>Minaya Construction</title>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="shortcut icon" href="https://sea-lion-app-pgnnr.ondigitalocean.app/logos/mclogo.ico" type="image/x-icon">
+
 
 </head>
 
 <body>
 
-     <header class="header" id="home">
-            <div class="container">
-                <div class="logo">
-                    <img src="/logos/MCLOGO.png" alt="No Cargo" />
-                </div>
-                <nav class="poetsen-one-regular">
-                    <i class="fa-solid fa-bars menu" id="menu"></i>
-                    <ul class="navigation">
-                        <i class="fa-solid fa-xmark" id="menu-close"></i>
-                        <li>
-                            <a href="#">INICIO</a>
-                        </li>
-                        <li>
-                            <a href="#about">SOBRE NOSOTROS</a>
-                        </li>
-
-                        <li>
-                            <a href="#portfolio">PORTAFOLIO</a>
-                        </li>
-
-                        <li>
-                            <a href="#services">SERVICIOS</a>
-                        </li>
-
-                        <li>
-                            <a href="#team">EQUIPO</a>
-                        </li>
-
-                        <li>
-                            <a href="#contact">CONTACTANOS</a>
-                        </li>
-                    </ul>
-                </nav>
+    <header class="header" id="home">
+        <div class="container">
+            <div class="logo">
+                <img src="/logos/MCLOGO.png" alt="No Cargo" />
             </div>
+            <nav class="poetsen-one-regular">
+                <i class="fa-solid fa-bars menu" id="menu"></i>
+                <ul class="navigation">
+                    <i class="fa-solid fa-xmark" id="menu-close"></i>
+                    <li>
+                        <a href="#">INICIO</a>
+                    </li>
+                    <li>
+                        <a href="#about">SOBRE NOSOTROS</a>
+                    </li>
+
+                    <li>
+                        <a href="#portfolio">PORTAFOLIO</a>
+                    </li>
+
+                    <li>
+                        <a href="#services">SERVICIOS</a>
+                    </li>
+
+                    <li>
+                        <a href="#team">EQUIPO</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">CONTACTANOS</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
 
@@ -88,7 +112,7 @@
             </div>
 
         </div>
-     
+
         <div class="about" id="about">
             <div class="box">
                 <img src="/imgs/img4.webp" alt="">
@@ -339,33 +363,33 @@
         </br>
         </br>
 
-      
+
     </main>
 
-      <footer class="footer">
-            <div class="row">
-                <div class="box">
-                    <p>
-                        Ubicacion:
-                        Calle 1ra #14, Suite 3A, Las Palmas de Herrera, Santo Domingo Oeste
-                    </p>
+    <footer class="footer">
+        <div class="row">
+            <div class="box">
+                <p>
+                    Ubicacion:
+                    Calle 1ra #14, Suite 3A, Las Palmas de Herrera, Santo Domingo Oeste
+                </p>
 
-                    <p> Tel: 809 000 0000</p>
+                <p> Tel: 809 000 0000</p>
 
-                    <p>
-                        Cel: 829 000 0000
-                    </p>
+                <p>
+                    Cel: 829 000 0000
+                </p>
 
-                    <a href="">Correo: contacto@minayaconstruction.com</a>
-                </div>
-                <div class="box">
-                    <img src="/logos/MCLOGO.png" alt="">
-                </div>
+                <a href="">Correo: contacto@minayaconstruction.com</a>
             </div>
-            <p class="alls-righs">
-                Todos los derechos reservados @minayaconstruction.com
-            </p>
-        </footer>
+            <div class="box">
+                <img src="/logos/MCLOGO.png" alt="">
+            </div>
+        </div>
+        <p class="alls-righs">
+            Todos los derechos reservados @minayaconstruction.com
+        </p>
+    </footer>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
@@ -375,9 +399,9 @@
             let links = document.querySelectorAll('.navigation > li')
             console.log(links)
 
-            for(let link of links){
-                link.addEventListener('click',() =>{
-                     navigation.classList.toggle('show');
+            for (let link of links) {
+                link.addEventListener('click', () => {
+                    navigation.classList.toggle('show');
                 })
             }
 
