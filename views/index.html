@@ -11,41 +11,43 @@
 </head>
 
 <body>
-    <div>
-        <header class="header">
+
+     <header class="header" id="home">
             <div class="container">
                 <div class="logo">
                     <img src="/logos/MCLOGO.png" alt="No Cargo" />
                 </div>
                 <nav class="poetsen-one-regular">
-                    <i class="fa-solid fa-bars menu"></i>
+                    <i class="fa-solid fa-bars menu" id="menu"></i>
                     <ul class="navigation">
+                        <i class="fa-solid fa-xmark" id="menu-close"></i>
                         <li>
-                            <a href="/">INICIO</a>
+                            <a href="#">INICIO</a>
                         </li>
                         <li>
-                            <a href="">SOBRE NOSOTROS</a>
-                        </li>
-
-                        <li>
-                            <a href="">PORTAFOLIO</a>
+                            <a href="#about">SOBRE NOSOTROS</a>
                         </li>
 
                         <li>
-                            <a href="">SERVICIOS</a>
+                            <a href="#portfolio">PORTAFOLIO</a>
                         </li>
 
                         <li>
-                            <a href="">EQUIPO</a>
+                            <a href="#services">SERVICIOS</a>
                         </li>
 
                         <li>
-                            <a href="">CONTACTANOS</a>
+                            <a href="#team">EQUIPO</a>
+                        </li>
+
+                        <li>
+                            <a href="#contact">CONTACTANOS</a>
                         </li>
                     </ul>
                 </nav>
             </div>
-        </header>
+    </header>
+    <main>
 
         <div class="container">
             <div class="home">
@@ -86,12 +88,14 @@
             </div>
 
         </div>
-
-        <div class="about">
+     
+        <div class="about" id="about">
             <div class="box">
                 <img src="/imgs/img4.webp" alt="">
             </div>
             <div class="box content">
+                <i class="fa-solid fa-circle-info white-color size-3"></i>
+                <br>
                 <h2 class="white-color">
                     SOBRE NOSOTROS
                 </h2>
@@ -103,7 +107,7 @@
             </div>
         </div>
 
-        <div class="portfolio">
+        <div class="portfolio" id="portfolio">
             </br>
             </br>
             </br>
@@ -139,7 +143,7 @@
             <br>
         </div>
 
-        <div class="services">
+        <div class="services" id="services">
             <br>
             <br>
             <h2 class="text-center">
@@ -249,7 +253,7 @@
             </div>
         </div>
 
-        <div class="team">
+        <div class="team" id="team">
             <br>
             <br>
             <h2 class="text-center">
@@ -303,7 +307,7 @@
         <br>
         <br>
 
-        <div class="contact">
+        <div class="contact" id="contact">
             <br>
             <br>
             <h2 class="text-center">
@@ -323,7 +327,7 @@
                         <br>
                         <input type="text" name="" placeholder="Asunto..." id="">
                         <br>
-                        <textarea name="" id="" placeholder="Descripcion..." rows="6"></textarea>
+                        <textarea name="" id="" class="actor-regular" placeholder="Descripcion..." rows="6"></textarea>
                         <br>
                         <button type="submit" class="btn adlam-display-regular p-1">
                             ENVIAR
@@ -335,7 +339,10 @@
         </br>
         </br>
 
-        <footer class="footer">
+      
+    </main>
+
+      <footer class="footer">
             <div class="row">
                 <div class="box">
                     <p>
@@ -352,14 +359,41 @@
                     <a href="">Correo: contacto@minayaconstruction.com</a>
                 </div>
                 <div class="box">
-                         <img src="/logos/MCLOGO.png" alt="">
+                    <img src="/logos/MCLOGO.png" alt="">
                 </div>
             </div>
             <p class="alls-righs">
                 Todos los derechos reservados @minayaconstruction.com
             </p>
         </footer>
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            let menu = document.querySelector('#menu');
+            let menuClose = document.querySelector('#menu-close');
+            let navigation = document.querySelector('.navigation');
+            let links = document.querySelectorAll('.navigation > li')
+            console.log(links)
+
+            for(let link of links){
+                link.addEventListener('click',() =>{
+                     navigation.classList.toggle('show');
+                })
+            }
+
+            menu.addEventListener('click', () => {
+                navigation.classList.toggle('show');
+
+            })
+
+            menuClose.addEventListener('click', () => {
+                navigation.classList.toggle('show');
+
+            })
+
+        });
+
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
@@ -417,6 +451,9 @@
                 }
             }
         })
+
+
+
     </script>
     <script src="https://kit.fontawesome.com/858b0cf629.js" crossorigin="anonymous"></script>
 </body>
