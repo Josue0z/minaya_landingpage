@@ -12,7 +12,7 @@ body,
 html {
 
     scroll-behavior: smooth;
-    scroll-padding-top: 88px;
+    scroll-padding-top: 84px;
 }
 
 
@@ -356,6 +356,11 @@ textarea {
 
     /* estilos para móviles pequeños */
 
+    
+     html {
+        font-size: 14px;
+    }
+
     .size-1{
         font-size: 1rem;
     }
@@ -413,9 +418,6 @@ textarea {
     }
 
 
-   html {
-        font-size: 15px;
-    }
     .services>.box {
         display: block;
     }
@@ -527,10 +529,10 @@ textarea {
 
     
       html {
-        font-size: 15px;
+        font-size: 14px;
     }
 
-        .size-1{
+    .size-1{
         font-size: 1rem;
     }
 
@@ -700,6 +702,10 @@ textarea {
 @media (min-width: 768px) and (max-width: 1024px) {
     /* estilos para tablets */
 
+        html {
+        font-size: 14px;
+    }
+
     nav>.menu {
         display: block;
         font-size: 2.5rem;
@@ -754,9 +760,7 @@ textarea {
     }
 
 
-    html {
-        font-size: 15px;
-    }
+ 
 
         .size-1{
         font-size: 1rem;
