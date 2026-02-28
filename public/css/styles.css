@@ -356,6 +356,18 @@ textarea {
 
     /* estilos para móviles pequeños */
 
+    .size-1{
+        font-size: 1rem;
+    }
+
+    .size-2{
+        font-size: 2rem;
+    }
+
+    .size-3{
+        font-size: 2.8rem;
+    }
+
     .navigation {
 
         visibility: hidden;
@@ -480,17 +492,7 @@ textarea {
     }
 
 
-    .size-1 {
-        font-size: 1.2rem;
-    }
 
-    .size-2 {
-        font-size: 1.7rem;
-    }
-
-    .size-3 {
-        font-size: 3.6rem;
-    }
 
     nav>.menu {
         display: block;
@@ -521,9 +523,24 @@ textarea {
 @media (min-width: 481px) and (max-width: 767px) {
 
     /* estilos para móviles medianos */
+
+    
       html {
         font-size: 15px;
     }
+
+        .size-1{
+        font-size: 1rem;
+    }
+
+    .size-2{
+        font-size: 2rem;
+    }
+
+    .size-3{
+        font-size: 2.8rem;
+    }
+
     .navigation {
 
         visibility: hidden;
@@ -649,17 +666,6 @@ textarea {
         width: 100%;
     }
 
-    .size-1 {
-        font-size: 1.5rem;
-    }
-
-    .size-2 {
-        font-size: 2rem;
-    }
-
-    .size-3 {
-        font-size: 4rem;
-    }
 
 
     nav>.menu {
@@ -696,6 +702,8 @@ textarea {
         display: block;
         font-size: 2.5rem;
     }
+
+
 
     .navigation {
 
@@ -745,6 +753,19 @@ textarea {
     html {
         font-size: 15px;
     }
+
+        .size-1{
+        font-size: 1rem;
+    }
+
+    .size-2{
+        font-size: 2rem;
+    }
+
+    .size-3{
+        font-size: 2.8rem;
+    }
+
 
     .services>.box {
         display: block;
@@ -824,17 +845,6 @@ textarea {
         width: 100%;
     }
 
-    .size-1 {
-        font-size: 1.8rem;
-    }
-
-    .size-2 {
-        font-size: 2.5rem;
-    }
-
-    .size-3 {
-        font-size: 4.5rem;
-    }
 
     .footer .row {
         display: flex;
