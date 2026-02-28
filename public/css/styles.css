@@ -12,12 +12,12 @@ body,
 html {
 
     scroll-behavior: smooth;
-    scroll-padding-top: 88px; 
+    scroll-padding-top: 88px;
 }
 
 
-main{
-overflow-x: hidden;
+main {
+    overflow-x: hidden;
 }
 
 body {
@@ -128,7 +128,7 @@ img {
     padding: 15px;
     min-height: 10vh;
     z-index: 100000;
- 
+
 }
 
 .header>.container {
@@ -346,15 +346,17 @@ textarea {
     right: 0;
     bottom: 2rem;
 }
+
 #menu-close {
     display: none;
 }
+
 /* Móviles pequeños (hasta 480px) */
 @media (max-width: 480px) {
 
     /* estilos para móviles pequeños */
 
-      .navigation {
+    .navigation {
 
         visibility: hidden;
         opacity: 0;
@@ -387,19 +389,20 @@ textarea {
         color: white;
         font-size: 2rem;
     }
-    .navigation.show{
+
+    .navigation.show {
         visibility: visible;
         opacity: 1;
     }
-    .navigation.show > #menu-close{
+
+    .navigation.show>#menu-close {
         display: block;
     }
 
 
-    html {
-        font-size: 12px;
+   html {
+        font-size: 15px;
     }
-
     .services>.box {
         display: block;
     }
@@ -510,16 +513,17 @@ textarea {
     .footer>.row>.box:nth-child(1) {
         order: 2;
     }
+
+  
 }
 
 /* Móviles medianos (481px a 767px) */
 @media (min-width: 481px) and (max-width: 767px) {
 
     /* estilos para móviles medianos */
-    html {
-        font-size: 12px;
+      html {
+        font-size: 15px;
     }
-
     .navigation {
 
         visibility: hidden;
@@ -537,7 +541,7 @@ textarea {
         margin: 0;
         padding: 0;
         transition: all ease 0.4s;
-            z-index: 21000;
+        z-index: 21000;
 
     }
 
@@ -553,11 +557,13 @@ textarea {
         color: white;
         font-size: 2rem;
     }
-    .navigation.show{
+
+    .navigation.show {
         visibility: visible;
         opacity: 1;
     }
-    .navigation.show > #menu-close{
+
+    .navigation.show>#menu-close {
         display: block;
     }
 
@@ -678,6 +684,8 @@ textarea {
     .footer>.row>.box:nth-child(1) {
         order: 2;
     }
+
+  
 }
 
 /* Tablets (768px a 1024px) */
@@ -723,17 +731,19 @@ textarea {
         font-size: 2rem;
 
     }
-    .navigation.show{
+
+    .navigation.show {
         visibility: visible;
         opacity: 1;
     }
-    .navigation.show > #menu-close{
+
+    .navigation.show>#menu-close {
         display: block;
     }
 
 
     html {
-        font-size: 12px;
+        font-size: 15px;
     }
 
     .services>.box {
@@ -841,6 +851,7 @@ textarea {
     .footer>.row>.box:nth-child(1) {
         order: 2;
     }
+
 
 }
 
