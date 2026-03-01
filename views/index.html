@@ -411,6 +411,7 @@
             const navLinks = document.querySelectorAll("nav a");
 
             const sections = document.querySelectorAll("section");
+            const xhtml = document.querySelector('html')
 
 
             window.addEventListener("scroll", () => {
@@ -432,7 +433,6 @@
                     link.classList.remove("active");
                     if (link.getAttribute("href") === "#" + current) {
                         link.classList.add("active");
-                      history.replaceState(null, null, window.location.pathname + "#" + current);
 
                     }
                 });
@@ -446,8 +446,13 @@
 
                 navLinks.forEach(link => {
                     link.classList.remove("active");
+
+
                     if (link.getAttribute("href") === currentHash) {
+                  
                         link.classList.add("active");
+                     
+
                     }
                 });
             }
