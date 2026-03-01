@@ -560,7 +560,7 @@ textarea {
 
   .swiper-slide img {
   width: 100%;
-  height: 400px; /* o el alto que quieras */
+  height: 300px; /* o el alto que quieras */
   object-fit: cover; /* recorta la imagen para que se ajuste */
 }
 
@@ -751,7 +751,7 @@ textarea {
 
   .swiper-slide img {
   width: 100%;
-  height: 400px; /* o el alto que quieras */
+  height: 300px; /* o el alto que quieras */
   object-fit: cover; /* recorta la imagen para que se ajuste */
 }
 
@@ -942,7 +942,7 @@ textarea {
     }
 .swiper-slide img {
   width: 100%;
-  height: 400px; /* o el alto que quieras */
+  height: 300px; /* o el alto que quieras */
   object-fit: cover; /* recorta la imagen para que se ajuste */
 }
 
