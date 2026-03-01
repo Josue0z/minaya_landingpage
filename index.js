@@ -17,6 +17,7 @@ const transporter = nodemailer.createTransport({
 
 console.log(process.env.GMAIL_USERNAME)
 
+console.log(process.env.GMAIL_PASSWORD)
 // Definir la carpeta pública 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json())
@@ -25,10 +26,10 @@ app.get('/',(req,res) => {
     res.sendFile(path.join(__dirname,'views','index.html'))
 })
 
-app.post('/submit',(req,res) =>{
+app.post('/submit',async(req,res) =>{
      try{
         const {name,subject,email,description} = req.body;
-        transporter.sendMail({
+        await transporter.sendMail({
            from:process.env.GMAIL_USERNAME,
            to:email,
            subject: `Nuevo mensaje: ${subject}`,
