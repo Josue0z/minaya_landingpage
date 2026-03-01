@@ -444,7 +444,7 @@ textarea {
         top: 40px;
         right: 40px;
         color: white;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .navigation.show {
@@ -536,10 +536,11 @@ textarea {
 
 
 
-    nav>.menu {
+      nav>.menu {
         display: block;
-        font-size: 2.5rem;
+        font-size: 1.5rem;
     }
+
 
 
     .footer .row {
@@ -564,12 +565,20 @@ textarea {
   object-fit: cover; /* recorta la imagen para que se ajuste */
 }
 
+    .logo {
+    width: 40px;
+}
 }
 
 /* Móviles medianos (481px a 767px) */
 @media (min-width: 481px) and (max-width: 767px) {
 
     /* estilos para móviles medianos */
+
+    .logo {
+    width: 40px;
+}
+
 
     .divider {
         height: 8px;
@@ -630,7 +639,7 @@ textarea {
         top: 40px;
         right: 40px;
         color: white;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .navigation.show {
@@ -728,7 +737,7 @@ textarea {
 
     nav>.menu {
         display: block;
-        font-size: 2.5rem;
+        font-size: 1.5rem;
     }
 
 
@@ -760,6 +769,8 @@ textarea {
 /* Tablets (768px a 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
     /* estilos para tablets */
+
+
 
         html {
         font-size: 14px;
