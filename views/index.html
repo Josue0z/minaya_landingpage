@@ -432,7 +432,8 @@
                     link.classList.remove("active");
                     if (link.getAttribute("href") === "#" + current) {
                         link.classList.add("active");
-                        history.replaceState(null, null, "#" + current);
+                      history.replaceState(null, null, window.location.pathname + "#" + current);
+
                     }
                 });
 
