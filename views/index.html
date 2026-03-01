@@ -420,10 +420,11 @@
                     const sectionHeight = section.clientHeight;
                     if (pageYOffset >= sectionTop - sectionHeight / 3) {
                         current = section.getAttribute("id");
-                      
-                        if(current == null){
-                            current ='';
+
+                        if (current == null) {
+                            current = '';
                         }
+
                     }
                 });
 
@@ -431,8 +432,11 @@
                     link.classList.remove("active");
                     if (link.getAttribute("href") === "#" + current) {
                         link.classList.add("active");
+                        history.replaceState(null, null, "#" + current);
                     }
                 });
+
+
             });
 
 
