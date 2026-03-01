@@ -15,9 +15,7 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-console.log(process.env.GMAIL_USERNAME)
 
-console.log(process.env.GMAIL_PASSWORD)
 // Definir la carpeta pública 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json())
