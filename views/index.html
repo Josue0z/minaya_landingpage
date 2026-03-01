@@ -46,26 +46,32 @@
                 <ul class="navigation">
                     <i class="fa-solid fa-xmark" id="menu-close"></i>
                     <li>
-                        <a href="#">INICIO</a>
+
+                        <a href="#"><i class="fa-regular fa-house" style="margin-right: 0.5rem;"></i>INICIO</a>
                     </li>
                     <li>
-                        <a href="#about">SOBRE NOSOTROS</a>
+
+                        <a href="#about"><i class="fa-solid fa-circle-info" style="margin-right: 0.5rem;"></i>SOBRE
+                            NOSOTROS</a>
                     </li>
 
                     <li>
-                        <a href="#portfolio">PORTAFOLIO</a>
+                        <a href="#portfolio"><i class="fa-solid fa-briefcase"
+                                style="margin-right: 0.5rem;"></i>PORTAFOLIO</a>
                     </li>
 
                     <li>
-                        <a href="#services">SERVICIOS</a>
+                        <a href="#services"><i class="fa-solid fa-helmet-safety"
+                                style="margin-right: 0.5rem;"></i>SERVICIOS</a>
                     </li>
 
                     <li>
-                        <a href="#team">EQUIPO</a>
+                        <a href="#team"><i class="fa-solid fa-users" style="margin-right: 0.5rem;"></i>EQUIPO</a>
                     </li>
 
                     <li>
-                        <a href="#contact">CONTACTANOS</a>
+                        <a href="#contact"><i class="fa-regular fa-envelope"
+                                style="margin-right: 0.5rem;"></i>CONTACTANOS</a>
                     </li>
                 </ul>
             </nav>
@@ -351,7 +357,8 @@
                         <br>
                         <input type="text" name="" placeholder="Asunto..." id="subject">
                         <br>
-                        <textarea name="" id="description" class="actor-regular" placeholder="Descripcion..." rows="6"></textarea>
+                        <textarea name="" id="description" class="actor-regular" placeholder="Descripcion..."
+                            rows="6"></textarea>
                         <br>
                         <button type="submit" class="btn adlam-display-regular p-1">
                             ENVIAR
@@ -370,22 +377,23 @@
         <div class="row">
             <div class="box">
                 <p class="p-2">
-                    <i class="fa-solid fa-map-location-dot" style="margin-right: 0.8rem;"></i>
+                    <i class="fa-solid fa-map-location-dot" style="margin-right: 0.5rem;"></i>
                     <a href="https://www.google.com/maps?q=Calle+1ra+%2314,+Suite+3A,+Las+Palmas+de+Herrera,+Santo+Domingo+Oeste"
                         target="_blank">
                         Calle 1ra #14, Suite 3A, Las Palmas de Herrera, Santo Domingo Oeste
                     </a>
                 </p>
 
-            
+
 
                 <p class="p-2"><i class="fa-solid fa-phone" style="margin-right: 0.5rem;"></i> Tel: 809 000 0000</p>
 
                 <p class="p-2">
-                    <i class="fa-brands fa-whatsapp" style="margin-right: 0.5rem;"></i>Cel: <a href="https://wa.me/18493570878" target="_blank">829 000 0000</a>
+                    <i class="fa-brands fa-whatsapp" style="margin-right: 0.5rem;"></i>Cel: <a
+                        href="https://wa.me/18493570878" target="_blank">829 000 0000</a>
                 </p>
 
-          
+
             </div>
             <div class="box">
                 <img src="/logos/MCLOGO.png" alt="">
@@ -393,63 +401,88 @@
         </div>
         <div class="alls-righs">
             <a href="mailto:contacto@minayaconstruction.com" class="p-1">contacto@minayaconstruction.com</a>
-           <p style="margin: 0;">
-             Todos los derechos reservados @minayaconstruction.com
-           </p>
+            <p style="margin: 0;">
+                Todos los derechos reservados @minayaconstruction.com
+            </p>
         </div>
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll("nav a");
+
+            function setActiveLink() {
+                const currentHash = window.location.hash == '' ? '#' : window.location.hash;
+
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === currentHash) {
+                        link.classList.add("active");
+                    }
+                });
+            }
+
+            // Al cargar la página y cuando cambie el hash
+            window.addEventListener("load", setActiveLink);
+            window.addEventListener("hashchange", setActiveLink);
+
 
             let formEl = document.querySelector('#form');
-            
-            console.log(fullName)
 
-            formEl.addEventListener('submit',async(e) =>{
+            formEl.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                
+
                 var info = {
-                        'name': fullName.value,
-                        'email':email.value,
-                        'subject':subject.value,
-                        'description':description.value
-                    };
-                var res= await fetch('/submit',{
-                    method:'POST',
+                    'name': fullName.value,
+                    'email': email.value,
+                    'subject': subject.value,
+                    'description': description.value
+                };
+                var res = await fetch('/submit', {
+                    method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body:JSON.stringify(info)
+                    body: JSON.stringify(info)
                 })
 
                 var data = await res.json()
-      
+
                 e.target.reset();
                 alert('EL FORMULARIO SE ENVIO')
-               
-               
-           
+
+
+
             })
 
             let menu = document.querySelector('#menu');
             let menuClose = document.querySelector('#menu-close');
             let navigation = document.querySelector('.navigation');
             let links = document.querySelectorAll('.navigation > li')
-            console.log(links)
+            let html = document.querySelector('html');
 
             for (let link of links) {
                 link.addEventListener('click', () => {
                     navigation.classList.toggle('show');
+                    html.style.overflowY = 'visible';
                 })
             }
 
             menu.addEventListener('click', () => {
+
                 navigation.classList.toggle('show');
+                html.style.overflowY = 'hidden';
 
             })
 
             menuClose.addEventListener('click', () => {
                 navigation.classList.toggle('show');
+                html.style.overflowY = 'visible';
 
             })
+
+            window.addEventListener('popstate', function (event) {
+                navigation.classList.remove('show');
+                html.style.overflowY = 'visible';
+            });
+
 
         });
 
