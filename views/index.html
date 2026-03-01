@@ -344,14 +344,14 @@
 
             <div class="container">
                 <div class="box">
-                    <form action="">
-                        <input type="text" name="" placeholder="Nombre..." id="">
+                    <form action="/submit" id="form">
+                        <input type="text" name="" placeholder="Nombre..." id="fullName">
                         <br>
-                        <input type="text" name="" placeholder="Correo..." id="">
+                        <input type="text" name="" placeholder="Correo..." id="email">
                         <br>
-                        <input type="text" name="" placeholder="Asunto..." id="">
+                        <input type="text" name="" placeholder="Asunto..." id="subject">
                         <br>
-                        <textarea name="" id="" class="actor-regular" placeholder="Descripcion..." rows="6"></textarea>
+                        <textarea name="" id="description" class="actor-regular" placeholder="Descripcion..." rows="6"></textarea>
                         <br>
                         <button type="submit" class="btn adlam-display-regular p-1">
                             ENVIAR
@@ -377,6 +377,7 @@
                     </a>
                 </p>
 
+            
 
                 <p class="p-2">Tel: 809 000 0000</p>
 
@@ -384,18 +385,49 @@
                     Cel: <a href="https://wa.me/18493570878" target="_blank">829 000 0000</a>
                 </p>
 
-                <a href="mailto:contacto@minayaconstruction.com" class="p-1">contacto@minayaconstruction.com</a>
+          
             </div>
             <div class="box">
                 <img src="/logos/MCLOGO.png" alt="">
             </div>
         </div>
-        <p class="alls-righs">
-            Todos los derechos reservados @minayaconstruction.com
-        </p>
+        <div class="alls-righs">
+            <a href="mailto:contacto@minayaconstruction.com" class="p-1">contacto@minayaconstruction.com</a>
+           <p style="margin: 0;">
+             Todos los derechos reservados @minayaconstruction.com
+           </p>
+        </div>
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+
+            let formEl = document.querySelector('#form');
+            
+            console.log(fullName)
+
+            formEl.addEventListener('submit',async(e) =>{
+                e.preventDefault();
+                
+                var info = {
+                        'name': fullName.value,
+                        'email':email.value,
+                        'subject':subject.value,
+                        'description':description.value
+                    };
+                var res= await fetch('/submit',{
+                    method:'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body:JSON.stringify(info)
+                })
+
+                var data = await res.json()
+      
+                e.target.reset();
+                alert('EL FORMULARIO SE ENVIO')
+               
+               
+           
+            })
 
             let menu = document.querySelector('#menu');
             let menuClose = document.querySelector('#menu-close');
