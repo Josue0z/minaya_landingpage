@@ -8,9 +8,9 @@
     box-sizing: border-box;
 }
 
-.loader-box{
-   visibility: hidden;
-   opacity: 0;
+.loader-box {
+    visibility: hidden;
+    opacity: 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -23,11 +23,13 @@
     z-index: 200000000;
     text-align: center;
 }
-.loader-box.show{
+
+.loader-box.show {
     visibility: visible;
     opacity: 1;
 }
-.loader-box .logo-loader{
+
+.loader-box .logo-loader {
     width: 180px;
 }
 
@@ -41,19 +43,22 @@
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
     animation-play-state: paused;
-    }
+}
 
-    @keyframes rotation {
+@keyframes rotation {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
-    } 
-.loader-box.show  .loader {
+}
+
+.loader-box.show .loader {
     animation-play-state: running;
 }
+
 body,
 html {
 
@@ -189,8 +194,37 @@ nav {
 }
 
 nav>.menu {
-    display: none;
+    position: relative;
     cursor: pointer;
+    z-index: 5000;
+    width: 40px;
+    height: 40px;
+    display: none;
+}
+
+nav>.menu>.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+nav>.menu>.box>.line {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: all .3s ease;
+    transform-origin: center;
+    z-index: 6000;
+}
+
+nav>.menu.active>.box .line:nth-child(1) {
+    transform: translate(0, 6px) rotate(45deg);
+}
+
+nav>.menu.active>.box>.line:nth-child(2) {
+    transform: rotate(-45deg);
 }
 
 nav>ul {
@@ -206,13 +240,15 @@ nav>ul>li {
     display: flex;
     justify-content: space-around;
 }
-.navigation>li > a{
+
+.navigation>li>a {
     color: rgba(255, 255, 255, 0.693);
 }
 
-.navigation>li > a.active{
+.navigation>li>a.active {
     color: white;
 }
+
 a {
     color: inherit;
     text-decoration: none;
@@ -250,15 +286,17 @@ a {
 .swiper-pagination-bullet-active-main,
 .swiper-pagination-bullet-active-prev,
 .swiper-pagination-bullet-active-next {
-  background-color: white !important;
-  transition: all .3s ease;
+    background-color: white !important;
+    transition: all .3s ease;
 }
 
 
 .swiper-slide img {
-  width: 100%;
-  height: 500px; /* o el alto que quieras */
-  object-fit: cover; /* recorta la imagen para que se ajuste */
+    width: 100%;
+    height: 500px;
+    /* o el alto que quieras */
+    object-fit: cover;
+    /* recorta la imagen para que se ajuste */
 }
 
 .about {
@@ -410,17 +448,15 @@ textarea {
     bottom: 1.5rem;
 }
 
-#menu-close {
-    display: none;
-    cursor: pointer;
+
+.divider {
+    height: 10px;
 }
 
-.divider{
-   height: 10px;
-}
-.divider.top{
+.divider.top {
     width: 50px;
 }
+
 .divider.primary {
     width: 140px;
 }
@@ -434,27 +470,29 @@ textarea {
     .divider {
         height: 8px;
     }
-    .divider.top{
+
+    .divider.top {
         width: 30px;
     }
+
     .divider.primary {
         width: 90px;
     }
 
-    
-     html {
+
+    html {
         font-size: 14px;
     }
 
-    .size-1{
+    .size-1 {
         font-size: 1.6rem;
     }
 
-    .size-2{
+    .size-2 {
         font-size: 2rem;
     }
 
-    .size-3{
+    .size-3 {
         font-size: 2.8rem;
     }
 
@@ -475,32 +513,21 @@ textarea {
         margin: 0;
         padding: 0;
         transition: all ease 0.4s;
-        z-index: 1000;
+        z-index: 100;
 
     }
 
     .navigation>li {
-        margin: 3rem 0;
-           font-size: 1.4rem;
+        margin: 2rem 0;
+        font-size: 1.2rem;
     }
 
-    #menu-close {
-        display: none;
-        position: absolute;
-        top: 35px;
-        right: 30px;
-        color: white;
-        font-size: 1.5rem;
-    }
 
     .navigation.show {
         visibility: visible;
         opacity: 1;
     }
 
-    .navigation.show>#menu-close {
-        display: block;
-    }
 
 
     .services>.box {
@@ -582,7 +609,7 @@ textarea {
 
 
 
-      nav>.menu {
+    nav>.menu {
         display: block;
         font-size: 1.5rem;
     }
@@ -605,15 +632,17 @@ textarea {
         order: 2;
     }
 
-  .swiper-slide img {
-  width: 100%;
-  height: 300px; /* o el alto que quieras */
-  object-fit: cover; /* recorta la imagen para que se ajuste */
-}
+    .swiper-slide img {
+        width: 100%;
+        height: 300px;
+        /* o el alto que quieras */
+        object-fit: cover;
+        /* recorta la imagen para que se ajuste */
+    }
 
     .logo {
-    width: 40px;
-}
+        width: 40px;
+    }
 }
 
 /* Móviles medianos (481px a 767px) */
@@ -622,34 +651,36 @@ textarea {
     /* estilos para móviles medianos */
 
     .logo {
-    width: 40px;
-}
+        width: 40px;
+    }
 
 
     .divider {
         height: 8px;
     }
-    .divider.top{
+
+    .divider.top {
         width: 30px;
     }
+
     .divider.primary {
         width: 90px;
     }
 
-    
-      html {
+
+    html {
         font-size: 14px;
     }
 
-      .size-1{
+    .size-1 {
         font-size: 1.6rem;
     }
 
-    .size-2{
+    .size-2 {
         font-size: 2rem;
     }
 
-    .size-3{
+    .size-3 {
         font-size: 2.8rem;
     }
 
@@ -670,31 +701,21 @@ textarea {
         margin: 0;
         padding: 0;
         transition: all ease 0.4s;
-        z-index: 21000;
+        z-index: 100;
 
     }
 
-    .navigation>li {
-        margin: 3rem 0;
-           font-size: 1.4rem;
+     .navigation>li {
+        margin: 2rem 0;
+        font-size: 1.2rem;
     }
 
-    #menu-close {
-        display: none;
-        position: absolute;
-        top: 35px;
-        right: 30px;
-        color: white;
-        font-size: 1.5rem;
-    }
+
+
 
     .navigation.show {
         visibility: visible;
         opacity: 1;
-    }
-
-    .navigation.show>#menu-close {
-        display: block;
     }
 
 
@@ -804,11 +825,13 @@ textarea {
         order: 2;
     }
 
-  .swiper-slide img {
-  width: 100%;
-  height: 300px; /* o el alto que quieras */
-  object-fit: cover; /* recorta la imagen para que se ajuste */
-}
+    .swiper-slide img {
+        width: 100%;
+        height: 300px;
+        /* o el alto que quieras */
+        object-fit: cover;
+        /* recorta la imagen para que se ajuste */
+    }
 
 }
 
@@ -818,17 +841,19 @@ textarea {
 
 
 
-        html {
+    html {
         font-size: 14px;
     }
 
-    
+
     .divider {
         height: 8px;
     }
-    .divider.top{
+
+    .divider.top {
         width: 30px;
     }
+
     .divider.primary {
         width: 90px;
     }
@@ -858,47 +883,36 @@ textarea {
         margin: 0;
         padding: 0;
         transition: all ease 0.4s;
-        z-index: 21000;
-     
+        z-index: 100;
+
 
     }
-
     .navigation>li {
-        margin: 3rem 0;
-        font-size: 1.4rem;
+        margin: 2rem 0;
+        font-size: 1.2rem;
     }
 
-    #menu-close {
-        display: none;
-        position: absolute;
-        top: 35px;
-        right: 30px;
-        color: white;
-        font-size: 2rem;
 
-    }
+
 
     .navigation.show {
         visibility: visible;
         opacity: 1;
     }
 
-    .navigation.show>#menu-close {
-        display: block;
-    }
 
 
- 
 
-      .size-1{
+
+    .size-1 {
         font-size: 1.6rem;
     }
 
-    .size-2{
+    .size-2 {
         font-size: 2rem;
     }
 
-    .size-3{
+    .size-3 {
         font-size: 2.8rem;
     }
 
@@ -997,11 +1011,14 @@ textarea {
     .footer>.row>.box:nth-child(1) {
         order: 2;
     }
-.swiper-slide img {
-  width: 100%;
-  height: 300px; /* o el alto que quieras */
-  object-fit: cover; /* recorta la imagen para que se ajuste */
-}
+
+    .swiper-slide img {
+        width: 100%;
+        height: 300px;
+        /* o el alto que quieras */
+        object-fit: cover;
+        /* recorta la imagen para que se ajuste */
+    }
 
 
 }

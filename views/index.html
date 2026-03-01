@@ -49,9 +49,14 @@
                 <img src="/logos/MCLOGO.png" alt="No Cargo" />
             </div>
             <nav class="poetsen-one-regular">
-                <i class="fa-solid fa-bars menu" id="menu"></i>
+                <div class="menu"  id="menu">
+                    <div class="box">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
                 <ul class="navigation">
-                    <i class="fa-solid fa-xmark" id="menu-close"></i>
+               
                     <li>
 
                         <a href="#"><i class="fa-regular fa-house" style="margin-right: 0.5rem;"></i>INICIO</a>
@@ -482,7 +487,7 @@
 
     </script>
     <script src="https://kit.fontawesome.com/858b0cf629.js" crossorigin="anonymous"></script>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const navLinks = document.querySelectorAll("nav a");
@@ -574,29 +579,33 @@
             })
 
             let menu = document.querySelector('#menu');
-            let menuClose = document.querySelector('#menu-close');
+          
             let navigation = document.querySelector('.navigation');
             let links = document.querySelectorAll('.navigation > li')
 
             for (let link of links) {
                 link.addEventListener('click', () => {
                     navigation.classList.toggle('show');
+                    menu.classList.toggle('active')
                     html.style.overflowY = 'visible';
                 })
             }
 
             menu.addEventListener('click', () => {
 
+                menu.classList.toggle('active')
+
                 navigation.classList.toggle('show');
-                html.style.overflowY = 'hidden';
+                
+               if(navigation.className.includes('show')){
+                 html.style.overflowY = 'hidden';
+               }else{
+                 html.style.overflowY = 'auto';
+               }
 
             })
 
-            menuClose.addEventListener('click', () => {
-                navigation.classList.toggle('show');
-                html.style.overflowY = 'visible';
-
-            })
+        
 
             window.addEventListener('popstate', function (event) {
                 navigation.classList.remove('show');
