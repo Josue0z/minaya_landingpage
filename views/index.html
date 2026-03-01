@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow-y: hidden;">
 
 <head>
     <meta charset="UTF-8">
@@ -35,6 +35,13 @@
 </head>
 
 <body>
+
+    <div class="loader-box show">
+        <div class="logo-loader">
+            <img src="/logos/MCLOGO.png" alt="no cargo">
+            <div class="loader"></div>
+        </div>
+    </div>
 
     <header class="header" id="home">
         <div class="container">
@@ -406,127 +413,8 @@
             </p>
         </div>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navLinks = document.querySelectorAll("nav a");
 
-            const sections = document.querySelectorAll("section");
-       
-      
-
-
-            window.addEventListener("scroll", () => {
-                let current = "";
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (pageYOffset >= sectionTop - sectionHeight / 3) {
-                        current = section.getAttribute("id");
-
-                        if (current == null) {
-                            current = '';
-                        }
-
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove("active");
-                    if (link.getAttribute("href") === "#" + current) {
-                        link.classList.add("active");
-
-                    }
-                });
-
-
-            });
-
-
-            function setActiveLink() {
-                const currentHash = window.location.hash == '' ? '#' : window.location.hash;
-
-                navLinks.forEach(link => {
-                    link.classList.remove("active");
-
-
-                    if (link.getAttribute("href") === currentHash) {
-
-                        link.classList.add("active");
-
-
-                    }
-                });
-
-               
-            }
-
-            // Al cargar la página y cuando cambie el hash
-            window.addEventListener("load", setActiveLink);
-            window.addEventListener("hashchange", setActiveLink);
-
-
-            let formEl = document.querySelector('#form');
-
-            formEl.addEventListener('submit', async (e) => {
-                e.preventDefault();
-
-                var info = {
-                    'name': fullName.value,
-                    'email': email.value,
-                    'subject': subject.value,
-                    'description': description.value
-                };
-                var res = await fetch('/submit', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(info)
-                })
-
-                var data = await res.json()
-
-                e.target.reset();
-                alert('EL FORMULARIO SE ENVIO')
-
-
-
-            })
-
-            let menu = document.querySelector('#menu');
-            let menuClose = document.querySelector('#menu-close');
-            let navigation = document.querySelector('.navigation');
-            let links = document.querySelectorAll('.navigation > li')
-            let html = document.querySelector('html');
-
-            for (let link of links) {
-                link.addEventListener('click', () => {
-                    navigation.classList.toggle('show');
-                    html.style.overflowY = 'visible';
-                })
-            }
-
-            menu.addEventListener('click', () => {
-
-                navigation.classList.toggle('show');
-                html.style.overflowY = 'hidden';
-
-            })
-
-            menuClose.addEventListener('click', () => {
-                navigation.classList.toggle('show');
-                html.style.overflowY = 'visible';
-
-            })
-
-            window.addEventListener('popstate', function (event) {
-                navigation.classList.remove('show');
-                html.style.overflowY = 'visible';
-            });
-
-
-        });
-
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
             // Optional parameters
@@ -594,6 +482,134 @@
 
     </script>
     <script src="https://kit.fontawesome.com/858b0cf629.js" crossorigin="anonymous"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll("nav a");
+
+            const sections = document.querySelectorAll("section");
+            const loaderBox = document.querySelector('.loader-box')
+            let html = document.querySelector('html');
+
+
+
+
+
+
+
+            window.addEventListener("scroll", () => {
+                let current = "";
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                        current = section.getAttribute("id");
+
+                        if (current == null) {
+                            current = '';
+                        }
+
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === "#" + current) {
+                        link.classList.add("active");
+
+                    }
+                });
+
+
+            });
+
+
+            function setActiveLink() {
+                const currentHash = window.location.hash == '' ? '#' : window.location.hash;
+
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+
+
+                    if (link.getAttribute("href") === currentHash) {
+
+                        link.classList.add("active");
+
+
+                    }
+                });
+
+
+            }
+
+            // Al cargar la página y cuando cambie el hash
+            window.addEventListener("load", setActiveLink);
+            window.addEventListener("hashchange", setActiveLink);
+
+
+            let formEl = document.querySelector('#form');
+
+            formEl.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                var info = {
+                    'name': fullName.value,
+                    'email': email.value,
+                    'subject': subject.value,
+                    'description': description.value
+                };
+                var res = await fetch('/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(info)
+                })
+
+                var data = await res.json()
+
+                e.target.reset();
+                alert('EL FORMULARIO SE ENVIO')
+
+
+
+            })
+
+            let menu = document.querySelector('#menu');
+            let menuClose = document.querySelector('#menu-close');
+            let navigation = document.querySelector('.navigation');
+            let links = document.querySelectorAll('.navigation > li')
+
+            for (let link of links) {
+                link.addEventListener('click', () => {
+                    navigation.classList.toggle('show');
+                    html.style.overflowY = 'visible';
+                })
+            }
+
+            menu.addEventListener('click', () => {
+
+                navigation.classList.toggle('show');
+                html.style.overflowY = 'hidden';
+
+            })
+
+            menuClose.addEventListener('click', () => {
+                navigation.classList.toggle('show');
+                html.style.overflowY = 'visible';
+
+            })
+
+            window.addEventListener('popstate', function (event) {
+                navigation.classList.remove('show');
+                html.style.overflowY = 'visible';
+            });
+
+            loaderBox.classList.remove('show');
+            html.style.overflowY = 'auto';
+
+        });
+
+    </script>
+
 </body>
 
 </html>

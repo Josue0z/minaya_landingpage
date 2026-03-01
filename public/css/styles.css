@@ -8,6 +8,52 @@
     box-sizing: border-box;
 }
 
+.loader-box{
+   visibility: hidden;
+   opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #B67747;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200000000;
+    text-align: center;
+}
+.loader-box.show{
+    visibility: visible;
+    opacity: 1;
+}
+.loader-box .logo-loader{
+    width: 180px;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    animation-play-state: paused;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+.loader-box.show  .loader {
+    animation-play-state: running;
+}
 body,
 html {
 
@@ -441,8 +487,8 @@ textarea {
     #menu-close {
         display: none;
         position: absolute;
-        top: 40px;
-        right: 40px;
+        top: 35px;
+        right: 30px;
         color: white;
         font-size: 1.5rem;
     }
@@ -636,8 +682,8 @@ textarea {
     #menu-close {
         display: none;
         position: absolute;
-        top: 40px;
-        right: 40px;
+        top: 35px;
+        right: 30px;
         color: white;
         font-size: 1.5rem;
     }
@@ -825,8 +871,8 @@ textarea {
     #menu-close {
         display: none;
         position: absolute;
-        top: 40px;
-        right: 40px;
+        top: 35px;
+        right: 30px;
         color: white;
         font-size: 2rem;
 
