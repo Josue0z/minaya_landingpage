@@ -49,14 +49,14 @@
                 <img src="/logos/MCLOGO.png" alt="No Cargo" />
             </div>
             <nav class="poetsen-one-regular">
-                <div class="menu"  id="menu">
+                <div class="menu" id="menu">
                     <div class="box">
                         <div class="line"></div>
                         <div class="line"></div>
                     </div>
                 </div>
                 <ul class="navigation">
-               
+
                     <li>
 
                         <a href="#"><i class="fa-regular fa-house" style="margin-right: 0.5rem;"></i>INICIO</a>
@@ -419,7 +419,7 @@
         </div>
     </footer>
 
-        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
             // Optional parameters
@@ -495,12 +495,6 @@
             const sections = document.querySelectorAll("section");
             const loaderBox = document.querySelector('.loader-box')
             let html = document.querySelector('html');
-
-
-
-
-
-
 
             window.addEventListener("scroll", () => {
                 let current = "";
@@ -579,7 +573,7 @@
             })
 
             let menu = document.querySelector('#menu');
-          
+
             let navigation = document.querySelector('.navigation');
             let links = document.querySelectorAll('.navigation > li')
 
@@ -596,21 +590,24 @@
                 menu.classList.toggle('active')
 
                 navigation.classList.toggle('show');
-                
-               if(navigation.className.includes('show')){
-                 html.style.overflowY = 'hidden';
-               }else{
-                 html.style.overflowY = 'auto';
-               }
+
+                if (navigation.className.includes('show')) {
+                    html.style.overflowY = 'hidden';
+                } else {
+                    html.style.overflowY = 'auto';
+                }
 
             })
 
-        
 
             window.addEventListener('popstate', function (event) {
+
+                menu.classList.remove('active')
                 navigation.classList.remove('show');
-                html.style.overflowY = 'visible';
+                html.style.overflowY = 'auto';
+
             });
+
 
             loaderBox.classList.remove('show');
             html.style.overflowY = 'auto';
