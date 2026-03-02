@@ -363,14 +363,14 @@
             <div class="container">
                 <div class="box">
                     <form action="/submit" id="form">
-                        <input type="text" name="" placeholder="Nombre..." id="fullName">
+                        <input type="text" name="" placeholder="Nombre..." id="fullName" required>
                         <br>
-                        <input type="text" name="" placeholder="Correo..." id="email">
+                        <input type="email" name="" placeholder="Correo..." id="email" required>
                         <br>
-                        <input type="text" name="" placeholder="Asunto..." id="subject">
+                        <input type="text" name="" placeholder="Asunto..." id="subject" required>
                         <br>
                         <textarea name="" id="description" class="actor-regular" placeholder="Descripcion..."
-                            rows="6"></textarea>
+                            rows="6" required></textarea>
                         <br>
                         <button type="submit" class="btn adlam-display-regular p-1">
                             ENVIAR
@@ -601,7 +601,6 @@
 
 
             window.addEventListener('popstate', function (event) {
-
                 menu.classList.remove('active')
                 navigation.classList.remove('show');
                 html.style.overflowY = 'auto';
